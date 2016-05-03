@@ -1,0 +1,284 @@
+/*BookMark Application*/
+
+body{
+    margin: 0;
+    font-family: 'Oxygen', sans-serif;
+    background-color: darkcyan;
+}
+
+#page_header, .container, .page_footer{
+    width: 80%;
+    min-width: 30em;
+    margin: auto;
+}
+
+/*BookMark Navigation Style*/
+#bookmark_page_nav{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style-type: none;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    border-radius: 10px;
+    background-color: #999999;
+}
+
+li.bookmark_nav_links a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 16px 24px;
+}
+
+li.bookmark_nav_links a:hover{
+    background-color: #666666;
+}
+
+/*BookMark Header Image Style*/
+#bookmark_img{
+    width: 90px;
+    height: 120px;
+    margin-bottom: 10px;
+}
+
+#warning_img{
+    width: 70px;
+    height: 70px;
+    margin-bottom: 10px;
+}
+
+.bookmark_container{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+
+    border-radius: 10px;
+}
+
+.bookmark_home{
+    width: 70%;
+    word-wrap: break-word;
+    padding: 0.5em;
+    background-color: whitesmoke;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.bookmark_side{
+    border-left: 1px groove #666666;
+    word-wrap: break-word;
+    padding-left: 0.5em;
+    width: 30%;
+}
+
+.header_text{
+    font-size: 250%;
+    color: white;
+}
+
+.widget_header{
+    background-color: #999999;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-top: 0px;
+    padding: 0.5em;
+    border-bottom: 1px groove #666666;
+}
+
+.widget{
+    border-radius: 10px;
+    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 0.5em;
+    background-color: whitesmoke;
+}
+
+.bookmark_inner{
+    padding-top: 0em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 0.5em;
+}
+
+/*Login Widget*/
+input[type=text], input[type=password] {
+    margin: 5px;
+    padding: 0 10px;
+    width: 70%;
+    height: 34px;
+    font-size: large;
+    background: white;
+    border: 1px solid;
+    border-radius: 5px;
+    outline: 5px solid #eff4f7;
+}
+
+input[type=text]:focus, input[type=password]:focus{
+    box-shadow: inset 1px 1px 2px 0 #707070;
+}
+
+input[type=submit], input[type=button]{
+    margin: 5px;
+    cursor: pointer;
+    padding: 8px 16px;
+    font-size: medium;
+    text-align: center;
+    border-radius: 8px;
+}
+
+input[type=submit]:hover, input[type=button]:hover{
+    background-color: #666666;
+    color: whitesmoke;
+}
+
+.register_text, a{
+    text-decoration: none;
+    margin: 5px;
+}
+.register_text:hover{
+    text-decoration: underline;
+}
+
+/* Index Splash */
+.index_splash{
+    background-color: #dc4444;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.p_splash{
+    color: white;
+    text-shadow: #444444
+}
+
+.reg_btn{
+    background-color: #999999;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+.reg_btn:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+/*Register Page*/
+.register_boxes{
+    width: 60%;
+}
+
+.page_footer{
+    display: flex;
+    height: 150px;
+    justify-content: center;
+    background-color: #999999;
+    border-radius: 10px;
+    color: whitesmoke;
+    border-top: 2px solid #666666;
+}
+
+/* Bookmark Output */
+
+.bookmark_select a{
+    border-radius: 4px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+div.bookmark_select a:hover{
+    background-color: darkcyan;
+    color: white;
+}
+
+.bookmark_select:nth-child(odd), .bookmark_check:nth-child(odd){
+    background-color: rgba(0, 145, 136, 0.2);
+    border-radius: 4px;
+}
+
+div.bookmark_select a{
+    display: block;
+    text-decoration: none;
+    color: #444444;
+    text-align: center;
+    padding: 16px 24px;
+}
+
+.bookmark_list_header{
+    text-align: center;
+}
+
+/* Create Bookmarks.php styling */
+.create_bk_header{
+    background-color: #dc4444;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-top: 0px;
+    padding: 0.5em;
+    color: whitesmoke;
+    border-bottom: 1px groove #666666;
+}
+
+.create_bk_widget{
+    border-radius: 10px;
+    border: 0.5px solid #b5b5b5;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    background-color: whitesmoke;
+}
+
+.create_bk_inner_first{
+    padding-top: 0em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 0.5em;
+}
+
+.create_bk_inner{
+    border-top: 0.2px solid #b5b5b5;
+    padding-top: 0em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 0.5em;
+}
+
+.create_bk_submit{
+    margin-left: 1.1em;
+}
+
+/* Update Bookmark Checkbox Styling */
+
+div.bookmark_check:hover{
+    background-color: darkcyan;
+    color: white;
+}
+
+div.bookmark_check{
+    display: block;
+    color: #444444;
+    vertical-align: middle;
+    padding: 16px 24px;
+
+    border-radius: 4px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+div.bookmark_check input[type=checkbox]{
+    width: 20%;
+    cursor: pointer;
+}
+
+.shift_label{
+    margin-left: -5%;
+}
+
+

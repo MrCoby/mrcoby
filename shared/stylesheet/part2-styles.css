@@ -1,0 +1,51 @@
+body{
+    /*background-color: #afcecf;*/
+    padding-top: 60px;
+}
+
+#myCarousel{
+    box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.carousel_img img{
+    width: 1280px;
+    max-height: 600px;
+}
+
+.index_header{
+    font-size: 4em;
+    margin-top: 0.5em;
+}
+
+.sidebar{
+    background-color: #F8F8FF;
+}
+
+.lesson_img{
+    width: 700px;
+    max-height: 400px;
+    box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-left: 2em;
+}
+
+.lesson_img_med{
+    width: 800px;
+    max-height: 500px;
+    box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-left: 3em;
+}
+
+.lesson_img_sm{
+    width: 500px;
+    max-height: 300px;
+    box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-left: 3em;
+}
+
+.quiz_form-group{
+    margin-bottom: 3em;
+}
+
+.left-pad{
+    margin-left: 2em;
+}

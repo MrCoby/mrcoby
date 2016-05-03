@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>PART 2 READ_ME</title>
+   <link rel="stylesheet" href="../shared/stylesheet/part1-styles.css" type="text/css">
+</head>
+<body style="background-color: white">
+<div class="container">
+   <h2>Documentation for Assignment 2, Part 2</h2>
+
+   <h3>Notes: </h3>
+   <ol>
+      <li><p>The core styling of this application uses Bootstrap</p></li>
+      <li><p>This application require a server that can run PHP and MySql</p></li>
+      <li><p>This application requires Javascript turned on the browser.</p></li>
+      <li><p>A small portion of this application was written using a Javascript library JQuery; used for some neat animation </p></li>
+      <li>
+         <p>
+            I did not have enough time to include a content for another course. So far we only have one course in the database. But it's quite voluminous to allow me to test various
+            aspects of the system.
+         </p>
+      </li>
+      <li><p>All scripts used in populating the database are also included in the submitted zip folder, under e-learning_scripts directory.</p></li>
+   </ol>
+
+   <h3>Algorithm: </h3>
+   <p> This web application was written primarily using HTML5, PHP, MySQL, Bootstrap, and was ran locally using the XAMPP server for development.</p>
+   <p>
+      This application maintains 3 main SESSION objects; currentCourse (holds the id of the current course), currentUnit (holds the id of the current unit), currentLesson
+      (holds the id of the current lesson). This allows for easy access of the user's request. We also implement a quiz for each unit. A user has just one try after which, the
+      quiz submit button is disabled.
+   </p>
+
+   <h3>Structure: </h3>
+   <p>Most pages in this application, were broken down into parts for easy manipulation, and code reuse.
+      it contains a <b>core</b> folder, which keeps our DB scripts, some helper scripts, and out init scripts.
+      it also contains an include folder which keeps some widgets used on the right menu of the screen, and the
+      upper and lower portion of the page.
+   </p>
+
+   <h3>Markup:</h3>
+   <ul>
+      <li><p>TAGS used are: course, introduction, syllabus, unit, objective, lesson, review, titles, object, ref, research, summary, assignment, books.</p></li>
+      <li><p>A course, has the following children: introduction, syllabus, unit, summary, research, assignment, books.</p></li>
+      <li><p>A unit, contains the following tags: objective, lesson, review, quiz.</p></li>
+      <li><p>A lesson, contains the following tags: title, object</p></li>
+      <li><p>Learning objects could either be image or html-text</p></li>
+   </ul>
+
+   <h3>Parser:</h3>
+   <P>
+      We use PHP SimpleXML parser for parsing. Each lesson object in the lesson table is parsed from top to bottom, and its contains references to either the textobject table,
+      or the imgobject table. Each image reference tag contains a reference attribute, a type, and size. Each text reference contains a type and a reference attribute.
+   </P>
+
+   <h3>Database: </h3>
+   <h4>
+      Our database contains 6 tables namely:
+   </h4>
+   <ul>
+      <li>
+         <p>
+            courses: holds all information regarding a course. The fields include: courseID, courseTitle, introduction, syllabus, summary, research, books, assignment.
+            The fields holds formatted html markup, that way each time we output a record to the browser, it gets automatically rendered.
+         </p>
+      </li>
+      <li>
+         <p>
+            units: holds all information regarding a unit. The fields include: unitID, unitTitle, objective, review, lesson, quiz.
+            The fields holds formatted html markup, that way each time we output a record to the browser, it gets automatically rendered. We don't use the markup in the lesson field for this app.
+            it was used for debugging purposes. A unitID and it's courseID uniquely identifies a record.
+         </p>
+      </li>
+      <li>
+         <p>
+            lessons: holds all information regarding a lesson within a unit. The fields include: lessonID, lessonTitle, lessonContent, courseID_Ref (FK from courses), unitID_Ref (FK from units)
+            The fields holds formatted html markup, that way each time we output a record to the browser, it gets automatically rendered. The lessonContent field contains references of learning objects
+            in a different table.
+         </p>
+      </li>
+      <li>
+         <p>
+            quizzes: holds all information regarding a quiz for a specific unit. The fields include: quizID, quizContent, quizAnswer, courseID_Ref (FK from courses), unitID_Ref (FK from units.
+            The quizContent field holds formatted html markup, that way each time we output a record to the browser, it gets automatically rendered. Multiple quiz questions related to a specific unit are stored in the table.
+            NOTE: each record holds a quiz question.
+         </p>
+      </li>
+      <li>
+         <p>
+            textobject & imgobject: are two different tables that holds all information for a specific lesson or lessons. In the textobject table, we store its contents in html mark up (p, div etc). In the imgobject
+            table, we store the urls to different images that are stored in a folder structure.
+         </p>
+      </li>
+   </ul>
+   <h3>Comments</h3>
+   <p>I'm glad I was able to pull off this part of the assignment. Now I have an understanding that I never had using PHP for web development. This method of using markups
+      could be used for developing blog websites, and many more.
+   </p>
+
+   <h3>References/Credits</h3>
+   <ol>
+      <li><p>Assignment Question was retrieved from: http://www.ccs.neu.edu/home/kenb/db/examples/018.html</p></li>
+      <li><p>Database tutorial contents were retrieved from: <a href="http://www.quackit.com/database/tutorial/database_management_systems.cfm">QuackIt.com</a> </p></li>
+      <li><p>Database tutorial contents were retrieved from: <a href="http://ion.uwinnipeg.ca/~ychen2/">Dr Yangjun Chen</a> </p></li>
+      <li><p>Database tutorial quiz contents were retrieved from: <a href="http://www.w3schools.com/quiztest/quiztest.asp?qtest=SQL">w3Schools.com</a> </p></li>
+   </ol>
+</div>
+
+</body>
+</html>
